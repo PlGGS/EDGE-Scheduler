@@ -34,5 +34,26 @@ namespace EDGE_Scheduler.Properties {
                 this["SpreadsheetID"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ExecutableDirectoryPath {
+            get {
+                return ((string)(this["ExecutableDirectoryPath"]));
+            }
+            set {
+                this["ExecutableDirectoryPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Blake\'s EDGE Scheduler")]
+        public string ApplicationName {
+            get {
+                return ((string)(this["ApplicationName"]));
+            }
+        }
     }
 }
