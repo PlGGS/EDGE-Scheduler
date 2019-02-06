@@ -1,10 +1,4 @@
-﻿using Google.Apis.Auth.OAuth2;
-using Google.Apis.Auth.OAuth2.Responses;
-using Google.Apis.Services;
-using Google.Apis.Sheets.v4;
-using Google.Apis.Sheets.v4.Data;
-using Google.Apis.Util.Store;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,11 +24,37 @@ namespace EDGE_Scheduler
 
             Properties.Settings.Default.ExecutableDirectoryPath = AppDomain.CurrentDomain.BaseDirectory;
             Properties.Settings.Default.Save();
+
+            dtpStart.Format = DateTimePickerFormat.Time;
+            dtpStart.ShowUpDown = true;
+
+            dtpEnd.Format = DateTimePickerFormat.Time;
+            dtpEnd.ShowUpDown = true;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
             txtSpreadsheetID.Text = Properties.Settings.Default.SpreadsheetID;
+
+            try
+            {
+                dtpStart.Value = Properties.Settings.Default.StartTime;
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                Properties.Settings.Default.StartTime = dtpStart.Value;
+                Properties.Settings.Default.Save();
+            }
+
+            try
+            {
+                dtpEnd.Value = Properties.Settings.Default.EndTime;
+            }
+            catch (Exception)
+            {
+                Properties.Settings.Default.EndTime = dtpEnd.Value;
+                Properties.Settings.Default.Save();
+            }
         }
 
         private void btnReadData_Click(object sender, EventArgs e)
@@ -45,6 +65,18 @@ namespace EDGE_Scheduler
         private void txtSpreadsheetID_TextChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.SpreadsheetID = txtSpreadsheetID.Text;
+            Properties.Settings.Default.Save();
+        }
+        
+        private void dtpStart_ValueChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.StartTime = dtpStart.Value;
+            Properties.Settings.Default.Save();
+        }
+
+        private void dtpEnd_ValueChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.EndTime = dtpEnd.Value;
             Properties.Settings.Default.Save();
         }
     }

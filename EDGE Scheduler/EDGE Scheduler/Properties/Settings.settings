@@ -11,5 +11,11 @@
     <Setting Name="ApplicationName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Blake's EDGE Scheduler</Value>
     </Setting>
+    <Setting Name="StartTime" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="EndTime" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

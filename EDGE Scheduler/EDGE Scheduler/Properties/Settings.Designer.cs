@@ -55,5 +55,27 @@ namespace EDGE_Scheduler.Properties {
                 return ((string)(this["ApplicationName"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime StartTime {
+            get {
+                return ((global::System.DateTime)(this["StartTime"]));
+            }
+            set {
+                this["StartTime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime EndTime {
+            get {
+                return ((global::System.DateTime)(this["EndTime"]));
+            }
+            set {
+                this["EndTime"] = value;
+            }
+        }
     }
 }

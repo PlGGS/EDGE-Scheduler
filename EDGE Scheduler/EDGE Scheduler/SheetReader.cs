@@ -12,25 +12,15 @@ namespace EDGE_Scheduler
 {
     class SheetReader
     {
-        static string[] Scopes = { SheetsService.Scope.SpreadsheetsReadonly };
-
+        static readonly string[] Scopes = { SheetsService.Scope.SpreadsheetsReadonly };
+        
         DataGridView _dgvTimes;
 
-        public IList<IList<object>> Columns = SheetReader.ReadRange("Columns");
-        public IList<IList<object>> Submissions = SheetReader.ReadRange("Submissions"); //TODO make forms that appear if these ranges are not defined in your spreadsheet
+        public IList<IList<object>> Columns;
+        public IList<IList<object>> Submissions; //TODO make forms that appear if these ranges are not defined in your spreadsheet
 
         public SheetReader(DataGridView dgvTimes)
         {
-            if (ReadRange("Columns") != null)
-            {
-                Columns = SheetReader.ReadRange("Columns");
-            }
-
-            if (ReadRange("Submissions") != null)
-            {
-                Submissions = SheetReader.ReadRange("Submissions");
-            }
-
             _dgvTimes = dgvTimes;
         }
         
@@ -38,6 +28,16 @@ namespace EDGE_Scheduler
         {
             _dgvTimes.Columns.Clear();
             _dgvTimes.Rows.Clear();
+
+            try
+            {
+                Columns = SheetReader.ReadRange("Columns");
+                Submissions = SheetReader.ReadRange("Submissions");
+            }
+            catch (Google.GoogleApiException)
+            {
+                MessageBox.Show("Please make sure you have provided a valid Google Sheet and that you have added the named ranges: 'Columms' and 'Submissions'");
+            }
 
             if (Columns != null && Columns.Count > 0)
             {
@@ -61,8 +61,7 @@ namespace EDGE_Scheduler
 
                     for (int o = 0; o < Submissions[i].Count; o++)
                     {
-                        Console.WriteLine(Submissions[i][o].ToString());
-
+                        //Console.WriteLine(Submissions[i][o].ToString());
                         _dgvTimes.Rows[i].Cells[o].Value = Submissions[i][o];
                     }
                 }
@@ -105,7 +104,11 @@ namespace EDGE_Scheduler
             {
                 MessageBox.Show($"Please choose a Google account to use {Properties.Settings.Default.ApplicationName} with.");
             }
-
+            catch (Google.GoogleApiException)
+            {
+                MessageBox.Show($"Please make sure you have provided a valid Google Sheet.");
+            }
+            
             return null;
         }
     }
