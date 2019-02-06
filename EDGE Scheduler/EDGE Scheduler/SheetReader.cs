@@ -29,15 +29,8 @@ namespace EDGE_Scheduler
             _dgvTimes.Columns.Clear();
             _dgvTimes.Rows.Clear();
 
-            try
-            {
-                Columns = SheetReader.ReadRange("Columns");
-                Submissions = SheetReader.ReadRange("Submissions");
-            }
-            catch (Google.GoogleApiException)
-            {
-                MessageBox.Show("Please make sure you have provided a valid Google Sheet and that you have added the named ranges: 'Columms' and 'Submissions'");
-            }
+            Columns = SheetReader.ReadRange("Columns");
+            Submissions = SheetReader.ReadRange("Submissions");
 
             if (Columns != null && Columns.Count > 0)
             {
@@ -68,10 +61,10 @@ namespace EDGE_Scheduler
             }
             else
             {
-                Console.WriteLine("No data found.");
+                MessageBox.Show("No submissions data found. Please make sure you have provided a valid Google Sheet and that you have added the named ranges: 'Columms' and 'Submissions'", Properties.Settings.Default.ApplicationName);
             }
         }
-
+        
         public static IList<IList<object>> ReadRange(string range)
         {
             try
@@ -102,11 +95,15 @@ namespace EDGE_Scheduler
             }
             catch (System.AggregateException)
             {
-                MessageBox.Show($"Please choose a Google account to use {Properties.Settings.Default.ApplicationName} with.");
+                MessageBox.Show($"Please choose a Google account to use {Properties.Settings.Default.ApplicationName} with.", Properties.Settings.Default.ApplicationName);
             }
             catch (Google.GoogleApiException)
             {
-                MessageBox.Show($"Please make sure you have provided a valid Google Sheet.");
+                MessageBox.Show($"Please make sure you have provided a valid Google Sheet.", Properties.Settings.Default.ApplicationName);
+            }
+            catch (System.Net.Http.HttpRequestException)
+            {
+                MessageBox.Show($"Please check your internet connection.", Properties.Settings.Default.ApplicationName);
             }
             
             return null;

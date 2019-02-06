@@ -40,16 +40,12 @@
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.lblEnd = new System.Windows.Forms.Label();
             this.pnlOptions = new System.Windows.Forms.Panel();
-            this.mnsMain = new System.Windows.Forms.MenuStrip();
-            this.studentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.studentsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ctrSpreadsheet = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvTimes = new System.Windows.Forms.DataGridView();
+            this.pnlGroupsContainer = new System.Windows.Forms.Panel();
+            this.pnlGroups = new System.Windows.Forms.Panel();
             this.pnlOptions.SuspendLayout();
-            this.mnsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimes)).BeginInit();
+            this.pnlGroupsContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblSpreadsheetID
@@ -66,7 +62,7 @@
             // 
             this.btnReadData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReadData.Location = new System.Drawing.Point(5, 612);
+            this.btnReadData.Location = new System.Drawing.Point(5, 677);
             this.btnReadData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnReadData.Name = "btnReadData";
             this.btnReadData.Size = new System.Drawing.Size(339, 44);
@@ -78,10 +74,14 @@
             // cbxTeam
             // 
             this.cbxTeam.FormattingEnabled = true;
-            this.cbxTeam.Location = new System.Drawing.Point(216, 43);
+            this.cbxTeam.Items.AddRange(new object[] {
+            "Both",
+            "East",
+            "West"});
+            this.cbxTeam.Location = new System.Drawing.Point(277, 43);
             this.cbxTeam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxTeam.Name = "cbxTeam";
-            this.cbxTeam.Size = new System.Drawing.Size(125, 29);
+            this.cbxTeam.Size = new System.Drawing.Size(64, 29);
             this.cbxTeam.TabIndex = 3;
             // 
             // lblTeam
@@ -159,6 +159,7 @@
             // 
             this.pnlOptions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnlOptions.BackColor = System.Drawing.SystemColors.Control;
             this.pnlOptions.Controls.Add(this.lblEnd);
             this.pnlOptions.Controls.Add(this.dtpEnd);
             this.pnlOptions.Controls.Add(this.lblStart);
@@ -170,93 +171,66 @@
             this.pnlOptions.Controls.Add(this.cbxTeam);
             this.pnlOptions.Controls.Add(this.btnReadData);
             this.pnlOptions.Controls.Add(this.lblSpreadsheetID);
-            this.pnlOptions.Location = new System.Drawing.Point(0, 29);
+            this.pnlOptions.Location = new System.Drawing.Point(0, 0);
             this.pnlOptions.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlOptions.Name = "pnlOptions";
-            this.pnlOptions.Size = new System.Drawing.Size(348, 661);
+            this.pnlOptions.Size = new System.Drawing.Size(348, 726);
             this.pnlOptions.TabIndex = 1;
-            // 
-            // mnsMain
-            // 
-            this.mnsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.studentsToolStripMenuItem,
-            this.groupsToolStripMenuItem});
-            this.mnsMain.Location = new System.Drawing.Point(0, 0);
-            this.mnsMain.Name = "mnsMain";
-            this.mnsMain.Size = new System.Drawing.Size(1285, 24);
-            this.mnsMain.TabIndex = 3;
-            this.mnsMain.Text = "menuStrip1";
-            // 
-            // studentsToolStripMenuItem
-            // 
-            this.studentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.studentsToolStripMenuItem1});
-            this.studentsToolStripMenuItem.Name = "studentsToolStripMenuItem";
-            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.studentsToolStripMenuItem.Text = "File";
-            // 
-            // studentsToolStripMenuItem1
-            // 
-            this.studentsToolStripMenuItem1.Name = "studentsToolStripMenuItem1";
-            this.studentsToolStripMenuItem1.Size = new System.Drawing.Size(94, 22);
-            this.studentsToolStripMenuItem1.Text = "Edit";
-            // 
-            // groupsToolStripMenuItem
-            // 
-            this.groupsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ctrSpreadsheet,
-            this.groupsToolStripMenuItem2});
-            this.groupsToolStripMenuItem.Name = "groupsToolStripMenuItem";
-            this.groupsToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.groupsToolStripMenuItem.Text = "Section";
-            // 
-            // ctrSpreadsheet
-            // 
-            this.ctrSpreadsheet.Name = "ctrSpreadsheet";
-            this.ctrSpreadsheet.Size = new System.Drawing.Size(138, 22);
-            this.ctrSpreadsheet.Text = "Spreadsheet";
-            // 
-            // groupsToolStripMenuItem2
-            // 
-            this.groupsToolStripMenuItem2.Name = "groupsToolStripMenuItem2";
-            this.groupsToolStripMenuItem2.Size = new System.Drawing.Size(138, 22);
-            this.groupsToolStripMenuItem2.Text = "Groups";
             // 
             // dgvTimes
             // 
             this.dgvTimes.AllowUserToAddRows = false;
             this.dgvTimes.AllowUserToDeleteRows = false;
-            this.dgvTimes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvTimes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvTimes.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvTimes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTimes.Location = new System.Drawing.Point(349, 29);
+            this.dgvTimes.Location = new System.Drawing.Point(348, 470);
             this.dgvTimes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvTimes.Name = "dgvTimes";
             this.dgvTimes.ReadOnly = true;
-            this.dgvTimes.Size = new System.Drawing.Size(937, 661);
+            this.dgvTimes.Size = new System.Drawing.Size(658, 256);
             this.dgvTimes.TabIndex = 4;
+            // 
+            // pnlGroupsContainer
+            // 
+            this.pnlGroupsContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlGroupsContainer.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlGroupsContainer.Controls.Add(this.pnlGroups);
+            this.pnlGroupsContainer.Location = new System.Drawing.Point(348, 0);
+            this.pnlGroupsContainer.Name = "pnlGroupsContainer";
+            this.pnlGroupsContainer.Size = new System.Drawing.Size(658, 470);
+            this.pnlGroupsContainer.TabIndex = 5;
+            // 
+            // pnlGroups
+            // 
+            this.pnlGroups.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pnlGroups.Location = new System.Drawing.Point(9, 9);
+            this.pnlGroups.Name = "pnlGroups";
+            this.pnlGroups.Size = new System.Drawing.Size(639, 453);
+            this.pnlGroups.TabIndex = 0;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1285, 689);
+            this.ClientSize = new System.Drawing.Size(1005, 725);
+            this.Controls.Add(this.pnlGroupsContainer);
             this.Controls.Add(this.dgvTimes);
-            this.Controls.Add(this.mnsMain);
             this.Controls.Add(this.pnlOptions);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EDGE Scheduler";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnlOptions.ResumeLayout(false);
             this.pnlOptions.PerformLayout();
-            this.mnsMain.ResumeLayout(false);
-            this.mnsMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimes)).EndInit();
+            this.pnlGroupsContainer.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -274,13 +248,9 @@
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.Label lblEnd;
         private System.Windows.Forms.Panel pnlOptions;
-        private System.Windows.Forms.MenuStrip mnsMain;
-        private System.Windows.Forms.ToolStripMenuItem studentsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem studentsToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem groupsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ctrSpreadsheet;
-        private System.Windows.Forms.ToolStripMenuItem groupsToolStripMenuItem2;
         private System.Windows.Forms.DataGridView dgvTimes;
+        private System.Windows.Forms.Panel pnlGroupsContainer;
+        private System.Windows.Forms.Panel pnlGroups;
     }
 }
 

@@ -34,7 +34,11 @@ namespace EDGE_Scheduler
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            Form frmLoading = new frmLoading();
+            frmLoading.Show();
+
             txtSpreadsheetID.Text = Properties.Settings.Default.SpreadsheetID;
+            cbxTeam.SelectedIndex = 0;
 
             try
             {
@@ -55,6 +59,10 @@ namespace EDGE_Scheduler
                 Properties.Settings.Default.EndTime = dtpEnd.Value;
                 Properties.Settings.Default.Save();
             }
+
+            sheetReader.LoadGoogleSheet();
+
+            frmLoading.Close();
         }
 
         private void btnReadData_Click(object sender, EventArgs e)
