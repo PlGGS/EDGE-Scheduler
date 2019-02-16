@@ -28,48 +28,124 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblSpreadsheetID = new System.Windows.Forms.Label();
-            this.btnReadData = new System.Windows.Forms.Button();
-            this.cbxTeam = new System.Windows.Forms.ComboBox();
-            this.lblTeam = new System.Windows.Forms.Label();
-            this.txtSpreadsheetID = new System.Windows.Forms.TextBox();
-            this.lblShiftLength = new System.Windows.Forms.Label();
-            this.txtShiftLength = new System.Windows.Forms.TextBox();
-            this.dtpStart = new System.Windows.Forms.DateTimePicker();
-            this.lblStart = new System.Windows.Forms.Label();
-            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.scrMain = new System.Windows.Forms.SplitContainer();
+            this.btnCreateSchedule = new System.Windows.Forms.Button();
             this.lblEnd = new System.Windows.Forms.Label();
-            this.pnlOptions = new System.Windows.Forms.Panel();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.lblStart = new System.Windows.Forms.Label();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
+            this.txtShiftLength = new System.Windows.Forms.TextBox();
+            this.lblShiftLength = new System.Windows.Forms.Label();
+            this.lblTeam = new System.Windows.Forms.Label();
+            this.cbxTeam = new System.Windows.Forms.ComboBox();
+            this.btnReadData = new System.Windows.Forms.Button();
             this.dgvTimes = new System.Windows.Forms.DataGridView();
-            this.pnlGroupsContainer = new System.Windows.Forms.Panel();
-            this.pnlGroups = new System.Windows.Forms.Panel();
-            this.pnlOptions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scrMain)).BeginInit();
+            this.scrMain.Panel2.SuspendLayout();
+            this.scrMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimes)).BeginInit();
-            this.pnlGroupsContainer.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblSpreadsheetID
+            // scrMain
             // 
-            this.lblSpreadsheetID.AutoSize = true;
-            this.lblSpreadsheetID.Location = new System.Drawing.Point(4, 9);
-            this.lblSpreadsheetID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblSpreadsheetID.Name = "lblSpreadsheetID";
-            this.lblSpreadsheetID.Size = new System.Drawing.Size(115, 21);
-            this.lblSpreadsheetID.TabIndex = 1;
-            this.lblSpreadsheetID.Text = "Spreadsheet ID";
+            this.scrMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scrMain.Location = new System.Drawing.Point(0, 0);
+            this.scrMain.Name = "scrMain";
+            this.scrMain.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // btnReadData
+            // scrMain.Panel1
             // 
-            this.btnReadData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReadData.Location = new System.Drawing.Point(5, 677);
-            this.btnReadData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnReadData.Name = "btnReadData";
-            this.btnReadData.Size = new System.Drawing.Size(339, 44);
-            this.btnReadData.TabIndex = 2;
-            this.btnReadData.Text = "Read Data";
-            this.btnReadData.UseVisualStyleBackColor = true;
-            this.btnReadData.Click += new System.EventHandler(this.btnReadData_Click);
+            this.scrMain.Panel1.BackColor = System.Drawing.Color.Silver;
+            // 
+            // scrMain.Panel2
+            // 
+            this.scrMain.Panel2.Controls.Add(this.btnCreateSchedule);
+            this.scrMain.Panel2.Controls.Add(this.lblEnd);
+            this.scrMain.Panel2.Controls.Add(this.dtpEnd);
+            this.scrMain.Panel2.Controls.Add(this.lblStart);
+            this.scrMain.Panel2.Controls.Add(this.dtpStart);
+            this.scrMain.Panel2.Controls.Add(this.txtShiftLength);
+            this.scrMain.Panel2.Controls.Add(this.lblShiftLength);
+            this.scrMain.Panel2.Controls.Add(this.lblTeam);
+            this.scrMain.Panel2.Controls.Add(this.cbxTeam);
+            this.scrMain.Panel2.Controls.Add(this.btnReadData);
+            this.scrMain.Panel2.Controls.Add(this.dgvTimes);
+            this.scrMain.Panel2.SizeChanged += new System.EventHandler(this.scrMain_Panel2_SizeChanged);
+            this.scrMain.Size = new System.Drawing.Size(1005, 725);
+            this.scrMain.SplitterDistance = 500;
+            this.scrMain.TabIndex = 2;
+            // 
+            // btnCreateSchedule
+            // 
+            this.btnCreateSchedule.Location = new System.Drawing.Point(173, 176);
+            this.btnCreateSchedule.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCreateSchedule.Name = "btnCreateSchedule";
+            this.btnCreateSchedule.Size = new System.Drawing.Size(172, 44);
+            this.btnCreateSchedule.TabIndex = 24;
+            this.btnCreateSchedule.Text = "Create Schedule";
+            this.btnCreateSchedule.UseVisualStyleBackColor = true;
+            this.btnCreateSchedule.Click += new System.EventHandler(this.btnCreateSchedule_Click);
+            // 
+            // lblEnd
+            // 
+            this.lblEnd.AutoSize = true;
+            this.lblEnd.Location = new System.Drawing.Point(2, 128);
+            this.lblEnd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEnd.Name = "lblEnd";
+            this.lblEnd.Size = new System.Drawing.Size(36, 21);
+            this.lblEnd.TabIndex = 23;
+            this.lblEnd.Text = "End";
+            // 
+            // dtpEnd
+            // 
+            this.dtpEnd.Location = new System.Drawing.Point(70, 122);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(269, 29);
+            this.dtpEnd.TabIndex = 22;
+            // 
+            // lblStart
+            // 
+            this.lblStart.AutoSize = true;
+            this.lblStart.Location = new System.Drawing.Point(2, 89);
+            this.lblStart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStart.Name = "lblStart";
+            this.lblStart.Size = new System.Drawing.Size(42, 21);
+            this.lblStart.TabIndex = 21;
+            this.lblStart.Text = "Start";
+            // 
+            // dtpStart
+            // 
+            this.dtpStart.Location = new System.Drawing.Point(70, 83);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(269, 29);
+            this.dtpStart.TabIndex = 20;
+            // 
+            // txtShiftLength
+            // 
+            this.txtShiftLength.Location = new System.Drawing.Point(302, 45);
+            this.txtShiftLength.Name = "txtShiftLength";
+            this.txtShiftLength.Size = new System.Drawing.Size(37, 29);
+            this.txtShiftLength.TabIndex = 19;
+            // 
+            // lblShiftLength
+            // 
+            this.lblShiftLength.AutoSize = true;
+            this.lblShiftLength.Location = new System.Drawing.Point(2, 48);
+            this.lblShiftLength.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblShiftLength.Name = "lblShiftLength";
+            this.lblShiftLength.Size = new System.Drawing.Size(130, 21);
+            this.lblShiftLength.TabIndex = 18;
+            this.lblShiftLength.Text = "Shift Length (hrs)";
+            // 
+            // lblTeam
+            // 
+            this.lblTeam.AutoSize = true;
+            this.lblTeam.Location = new System.Drawing.Point(2, 10);
+            this.lblTeam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTeam.Name = "lblTeam";
+            this.lblTeam.Size = new System.Drawing.Size(46, 21);
+            this.lblTeam.TabIndex = 16;
+            this.lblTeam.Text = "Team";
             // 
             // cbxTeam
             // 
@@ -78,179 +154,74 @@
             "Both",
             "East",
             "West"});
-            this.cbxTeam.Location = new System.Drawing.Point(277, 43);
+            this.cbxTeam.Location = new System.Drawing.Point(275, 7);
             this.cbxTeam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxTeam.Name = "cbxTeam";
             this.cbxTeam.Size = new System.Drawing.Size(64, 29);
-            this.cbxTeam.TabIndex = 3;
+            this.cbxTeam.TabIndex = 14;
             // 
-            // lblTeam
+            // btnReadData
             // 
-            this.lblTeam.AutoSize = true;
-            this.lblTeam.Location = new System.Drawing.Point(4, 46);
-            this.lblTeam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTeam.Name = "lblTeam";
-            this.lblTeam.Size = new System.Drawing.Size(46, 21);
-            this.lblTeam.TabIndex = 4;
-            this.lblTeam.Text = "Team";
-            // 
-            // txtSpreadsheetID
-            // 
-            this.txtSpreadsheetID.Location = new System.Drawing.Point(150, 6);
-            this.txtSpreadsheetID.Name = "txtSpreadsheetID";
-            this.txtSpreadsheetID.Size = new System.Drawing.Size(191, 29);
-            this.txtSpreadsheetID.TabIndex = 5;
-            this.txtSpreadsheetID.TextChanged += new System.EventHandler(this.txtSpreadsheetID_TextChanged);
-            // 
-            // lblShiftLength
-            // 
-            this.lblShiftLength.AutoSize = true;
-            this.lblShiftLength.Location = new System.Drawing.Point(4, 82);
-            this.lblShiftLength.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblShiftLength.Name = "lblShiftLength";
-            this.lblShiftLength.Size = new System.Drawing.Size(130, 21);
-            this.lblShiftLength.TabIndex = 6;
-            this.lblShiftLength.Text = "Shift Length (hrs)";
-            // 
-            // txtShiftLength
-            // 
-            this.txtShiftLength.Location = new System.Drawing.Point(304, 81);
-            this.txtShiftLength.Name = "txtShiftLength";
-            this.txtShiftLength.Size = new System.Drawing.Size(37, 29);
-            this.txtShiftLength.TabIndex = 7;
-            // 
-            // dtpStart
-            // 
-            this.dtpStart.Location = new System.Drawing.Point(72, 119);
-            this.dtpStart.Name = "dtpStart";
-            this.dtpStart.Size = new System.Drawing.Size(269, 29);
-            this.dtpStart.TabIndex = 8;
-            this.dtpStart.ValueChanged += new System.EventHandler(this.dtpStart_ValueChanged);
-            // 
-            // lblStart
-            // 
-            this.lblStart.AutoSize = true;
-            this.lblStart.Location = new System.Drawing.Point(4, 125);
-            this.lblStart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblStart.Name = "lblStart";
-            this.lblStart.Size = new System.Drawing.Size(42, 21);
-            this.lblStart.TabIndex = 9;
-            this.lblStart.Text = "Start";
-            // 
-            // dtpEnd
-            // 
-            this.dtpEnd.Location = new System.Drawing.Point(72, 158);
-            this.dtpEnd.Name = "dtpEnd";
-            this.dtpEnd.Size = new System.Drawing.Size(269, 29);
-            this.dtpEnd.TabIndex = 10;
-            this.dtpEnd.ValueChanged += new System.EventHandler(this.dtpEnd_ValueChanged);
-            // 
-            // lblEnd
-            // 
-            this.lblEnd.AutoSize = true;
-            this.lblEnd.Location = new System.Drawing.Point(4, 164);
-            this.lblEnd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEnd.Name = "lblEnd";
-            this.lblEnd.Size = new System.Drawing.Size(36, 21);
-            this.lblEnd.TabIndex = 11;
-            this.lblEnd.Text = "End";
-            // 
-            // pnlOptions
-            // 
-            this.pnlOptions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnlOptions.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlOptions.Controls.Add(this.lblEnd);
-            this.pnlOptions.Controls.Add(this.dtpEnd);
-            this.pnlOptions.Controls.Add(this.lblStart);
-            this.pnlOptions.Controls.Add(this.dtpStart);
-            this.pnlOptions.Controls.Add(this.txtShiftLength);
-            this.pnlOptions.Controls.Add(this.lblShiftLength);
-            this.pnlOptions.Controls.Add(this.txtSpreadsheetID);
-            this.pnlOptions.Controls.Add(this.lblTeam);
-            this.pnlOptions.Controls.Add(this.cbxTeam);
-            this.pnlOptions.Controls.Add(this.btnReadData);
-            this.pnlOptions.Controls.Add(this.lblSpreadsheetID);
-            this.pnlOptions.Location = new System.Drawing.Point(0, 0);
-            this.pnlOptions.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pnlOptions.Name = "pnlOptions";
-            this.pnlOptions.Size = new System.Drawing.Size(348, 726);
-            this.pnlOptions.TabIndex = 1;
+            this.btnReadData.Location = new System.Drawing.Point(1, 176);
+            this.btnReadData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnReadData.Name = "btnReadData";
+            this.btnReadData.Size = new System.Drawing.Size(172, 44);
+            this.btnReadData.TabIndex = 16;
+            this.btnReadData.Text = "Read Data";
+            this.btnReadData.UseVisualStyleBackColor = true;
+            this.btnReadData.Click += new System.EventHandler(this.btnReadData_Click);
             // 
             // dgvTimes
             // 
             this.dgvTimes.AllowUserToAddRows = false;
             this.dgvTimes.AllowUserToDeleteRows = false;
-            this.dgvTimes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvTimes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTimes.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvTimes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTimes.Location = new System.Drawing.Point(348, 470);
+            this.dgvTimes.Location = new System.Drawing.Point(345, 0);
             this.dgvTimes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvTimes.Name = "dgvTimes";
             this.dgvTimes.ReadOnly = true;
-            this.dgvTimes.Size = new System.Drawing.Size(658, 256);
-            this.dgvTimes.TabIndex = 4;
-            // 
-            // pnlGroupsContainer
-            // 
-            this.pnlGroupsContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlGroupsContainer.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlGroupsContainer.Controls.Add(this.pnlGroups);
-            this.pnlGroupsContainer.Location = new System.Drawing.Point(348, 0);
-            this.pnlGroupsContainer.Name = "pnlGroupsContainer";
-            this.pnlGroupsContainer.Size = new System.Drawing.Size(658, 470);
-            this.pnlGroupsContainer.TabIndex = 5;
-            // 
-            // pnlGroups
-            // 
-            this.pnlGroups.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.pnlGroups.Location = new System.Drawing.Point(9, 9);
-            this.pnlGroups.Name = "pnlGroups";
-            this.pnlGroups.Size = new System.Drawing.Size(639, 453);
-            this.pnlGroups.TabIndex = 0;
+            this.dgvTimes.Size = new System.Drawing.Size(660, 221);
+            this.dgvTimes.TabIndex = 15;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1005, 725);
-            this.Controls.Add(this.pnlGroupsContainer);
-            this.Controls.Add(this.dgvTimes);
-            this.Controls.Add(this.pnlOptions);
+            this.Controls.Add(this.scrMain);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EDGE Scheduler";
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.pnlOptions.ResumeLayout(false);
-            this.pnlOptions.PerformLayout();
+            this.scrMain.Panel2.ResumeLayout(false);
+            this.scrMain.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scrMain)).EndInit();
+            this.scrMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimes)).EndInit();
-            this.pnlGroupsContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblSpreadsheetID;
-        private System.Windows.Forms.Button btnReadData;
-        private System.Windows.Forms.ComboBox cbxTeam;
-        private System.Windows.Forms.Label lblTeam;
-        private System.Windows.Forms.TextBox txtSpreadsheetID;
-        private System.Windows.Forms.Label lblShiftLength;
-        private System.Windows.Forms.TextBox txtShiftLength;
-        private System.Windows.Forms.DateTimePicker dtpStart;
-        private System.Windows.Forms.Label lblStart;
-        private System.Windows.Forms.DateTimePicker dtpEnd;
+        private System.Windows.Forms.SplitContainer scrMain;
         private System.Windows.Forms.Label lblEnd;
-        private System.Windows.Forms.Panel pnlOptions;
         private System.Windows.Forms.DataGridView dgvTimes;
-        private System.Windows.Forms.Panel pnlGroupsContainer;
-        private System.Windows.Forms.Panel pnlGroups;
+        private System.Windows.Forms.DateTimePicker dtpEnd;
+        private System.Windows.Forms.Label lblStart;
+        private System.Windows.Forms.DateTimePicker dtpStart;
+        private System.Windows.Forms.TextBox txtShiftLength;
+        private System.Windows.Forms.Label lblShiftLength;
+        private System.Windows.Forms.Label lblTeam;
+        private System.Windows.Forms.ComboBox cbxTeam;
+        private System.Windows.Forms.Button btnReadData;
+        private System.Windows.Forms.Button btnCreateSchedule;
     }
 }
 

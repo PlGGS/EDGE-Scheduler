@@ -77,5 +77,17 @@ namespace EDGE_Scheduler.Properties {
                 this["EndTime"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double ShiftLength {
+            get {
+                return ((double)(this["ShiftLength"]));
+            }
+            set {
+                this["ShiftLength"] = value;
+            }
+        }
     }
 }

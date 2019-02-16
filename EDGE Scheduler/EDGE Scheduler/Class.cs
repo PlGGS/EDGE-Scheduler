@@ -11,6 +11,7 @@ namespace EDGE_Scheduler
         public enum Campuses { LincolnPark, Loop }
 
         public string Name { get; set; }
+        public string[] Days { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public Campuses Campus { get; set; }
