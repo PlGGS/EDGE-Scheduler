@@ -24,15 +24,27 @@ namespace EDGE_Scheduler
 
         public void CreateSchedule(string team, double shiftLength, DateTime startTime, DateTime endTime)
         {
-            //Create students objects for easy grouping
-            for (int i = 0; i < sheetReader.Submissions.Count; i++)
-            {
-                CreateStudent(sheetReader.Columns[0], sheetReader.Submissions[i]);
-            }
+            CreateStudents();
 
 
         }
 
+        /// <summary>
+        /// Create students objects for easy grouping
+        /// </summary>
+        private void CreateStudents()
+        {
+            for (int i = 0; i < sheetReader.Submissions.Count; i++)
+            {
+                CreateStudent(sheetReader.Columns[0], sheetReader.Submissions[i]);
+            }
+        }
+
+        /// <summary>
+        /// Instantiates a new GreenTeamStudentObject for easy access to submission fields
+        /// </summary>
+        /// <param name="columns"></param>
+        /// <param name="submissionParams"></param>
         public void CreateStudent(IList<object> columns, IList<object> submissionParams)
         {
             GreenTeamStudent tmpStudent = new GreenTeamStudent(columns, submissionParams);

@@ -23,15 +23,12 @@ namespace EDGE_Scheduler.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1mLb6wOKlcBmgg_1r1YnIIB6nqiZDOyEObHvoRbridzs")]
         public string SpreadsheetID {
             get {
                 return ((string)(this["SpreadsheetID"]));
-            }
-            set {
-                this["SpreadsheetID"] = value;
             }
         }
         
@@ -87,6 +84,18 @@ namespace EDGE_Scheduler.Properties {
             }
             set {
                 this["ShiftLength"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TimeFromLoop {
+            get {
+                return ((double)(this["TimeFromLoop"]));
+            }
+            set {
+                this["TimeFromLoop"] = value;
             }
         }
     }

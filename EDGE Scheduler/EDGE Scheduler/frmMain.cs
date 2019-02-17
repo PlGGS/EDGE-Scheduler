@@ -41,6 +41,7 @@ namespace EDGE_Scheduler
 
             cbxTeam.SelectedIndex = 0;
             txtShiftLength.Text = Properties.Settings.Default.ShiftLength.ToString();
+            txtTimeFromLoop.Text = Properties.Settings.Default.TimeFromLoop.ToString();
 
             try
             {
@@ -120,8 +121,35 @@ namespace EDGE_Scheduler
 
         private void scrMain_Panel2_SizeChanged(object sender, EventArgs e)
         {
-            btnReadData.Bounds = new Rectangle(new Point(btnReadData.Location.X, cbxTeam.Top + 156), new Size(btnReadData.Width, scrMain.Panel2.Height - btnReadData.Top));
-            btnCreateSchedule.Bounds = new Rectangle(new Point(btnCreateSchedule.Location.X, cbxTeam.Top + 156), new Size(btnCreateSchedule.Width, scrMain.Panel2.Height - btnCreateSchedule.Top));
+            btnReadData.Bounds = new Rectangle(new Point(btnReadData.Location.X, cbxTeam.Top + 206), new Size(btnReadData.Width, scrMain.Panel2.Height - btnReadData.Top));
+            btnCreateSchedule.Bounds = new Rectangle(new Point(btnCreateSchedule.Location.X, cbxTeam.Top + 206), new Size(btnCreateSchedule.Width, scrMain.Panel2.Height - btnCreateSchedule.Top));
+        }
+
+        private void txtTimeFromLoop_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTimeFromLoop_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTimeFromLoop.Text == "")
+            {
+                Properties.Settings.Default.TimeFromLoop = 0;
+                Properties.Settings.Default.Save();
+            }
+            else
+            {
+                Properties.Settings.Default.TimeFromLoop = Convert.ToDouble(txtTimeFromLoop.Text);
+                Properties.Settings.Default.Save();
+            }
         }
     }
 }

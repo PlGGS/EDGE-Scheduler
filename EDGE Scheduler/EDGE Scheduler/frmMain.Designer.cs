@@ -40,6 +40,8 @@
             this.cbxTeam = new System.Windows.Forms.ComboBox();
             this.btnReadData = new System.Windows.Forms.Button();
             this.dgvTimes = new System.Windows.Forms.DataGridView();
+            this.txtTimeFromLoop = new System.Windows.Forms.TextBox();
+            this.lblTimeFromLoop = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.scrMain)).BeginInit();
             this.scrMain.Panel2.SuspendLayout();
             this.scrMain.SuspendLayout();
@@ -59,6 +61,8 @@
             // 
             // scrMain.Panel2
             // 
+            this.scrMain.Panel2.Controls.Add(this.txtTimeFromLoop);
+            this.scrMain.Panel2.Controls.Add(this.lblTimeFromLoop);
             this.scrMain.Panel2.Controls.Add(this.btnCreateSchedule);
             this.scrMain.Panel2.Controls.Add(this.lblEnd);
             this.scrMain.Panel2.Controls.Add(this.dtpEnd);
@@ -71,13 +75,13 @@
             this.scrMain.Panel2.Controls.Add(this.btnReadData);
             this.scrMain.Panel2.Controls.Add(this.dgvTimes);
             this.scrMain.Panel2.SizeChanged += new System.EventHandler(this.scrMain_Panel2_SizeChanged);
-            this.scrMain.Size = new System.Drawing.Size(1005, 725);
-            this.scrMain.SplitterDistance = 500;
+            this.scrMain.Size = new System.Drawing.Size(884, 564);
+            this.scrMain.SplitterDistance = 305;
             this.scrMain.TabIndex = 2;
             // 
             // btnCreateSchedule
             // 
-            this.btnCreateSchedule.Location = new System.Drawing.Point(173, 176);
+            this.btnCreateSchedule.Location = new System.Drawing.Point(172, 210);
             this.btnCreateSchedule.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCreateSchedule.Name = "btnCreateSchedule";
             this.btnCreateSchedule.Size = new System.Drawing.Size(172, 44);
@@ -89,7 +93,7 @@
             // lblEnd
             // 
             this.lblEnd.AutoSize = true;
-            this.lblEnd.Location = new System.Drawing.Point(2, 128);
+            this.lblEnd.Location = new System.Drawing.Point(2, 162);
             this.lblEnd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEnd.Name = "lblEnd";
             this.lblEnd.Size = new System.Drawing.Size(36, 21);
@@ -98,7 +102,7 @@
             // 
             // dtpEnd
             // 
-            this.dtpEnd.Location = new System.Drawing.Point(70, 122);
+            this.dtpEnd.Location = new System.Drawing.Point(72, 156);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(269, 29);
             this.dtpEnd.TabIndex = 22;
@@ -106,7 +110,7 @@
             // lblStart
             // 
             this.lblStart.AutoSize = true;
-            this.lblStart.Location = new System.Drawing.Point(2, 89);
+            this.lblStart.Location = new System.Drawing.Point(2, 123);
             this.lblStart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStart.Name = "lblStart";
             this.lblStart.Size = new System.Drawing.Size(42, 21);
@@ -115,14 +119,14 @@
             // 
             // dtpStart
             // 
-            this.dtpStart.Location = new System.Drawing.Point(70, 83);
+            this.dtpStart.Location = new System.Drawing.Point(72, 117);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(269, 29);
             this.dtpStart.TabIndex = 20;
             // 
             // txtShiftLength
             // 
-            this.txtShiftLength.Location = new System.Drawing.Point(302, 45);
+            this.txtShiftLength.Location = new System.Drawing.Point(304, 41);
             this.txtShiftLength.Name = "txtShiftLength";
             this.txtShiftLength.Size = new System.Drawing.Size(37, 29);
             this.txtShiftLength.TabIndex = 19;
@@ -130,7 +134,7 @@
             // lblShiftLength
             // 
             this.lblShiftLength.AutoSize = true;
-            this.lblShiftLength.Location = new System.Drawing.Point(2, 48);
+            this.lblShiftLength.Location = new System.Drawing.Point(4, 44);
             this.lblShiftLength.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblShiftLength.Name = "lblShiftLength";
             this.lblShiftLength.Size = new System.Drawing.Size(130, 21);
@@ -140,7 +144,7 @@
             // lblTeam
             // 
             this.lblTeam.AutoSize = true;
-            this.lblTeam.Location = new System.Drawing.Point(2, 10);
+            this.lblTeam.Location = new System.Drawing.Point(2, 6);
             this.lblTeam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTeam.Name = "lblTeam";
             this.lblTeam.Size = new System.Drawing.Size(46, 21);
@@ -154,7 +158,7 @@
             "Both",
             "East",
             "West"});
-            this.cbxTeam.Location = new System.Drawing.Point(275, 7);
+            this.cbxTeam.Location = new System.Drawing.Point(277, 3);
             this.cbxTeam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxTeam.Name = "cbxTeam";
             this.cbxTeam.Size = new System.Drawing.Size(64, 29);
@@ -162,7 +166,7 @@
             // 
             // btnReadData
             // 
-            this.btnReadData.Location = new System.Drawing.Point(1, 176);
+            this.btnReadData.Location = new System.Drawing.Point(1, 210);
             this.btnReadData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnReadData.Name = "btnReadData";
             this.btnReadData.Size = new System.Drawing.Size(172, 44);
@@ -184,18 +188,38 @@
             this.dgvTimes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvTimes.Name = "dgvTimes";
             this.dgvTimes.ReadOnly = true;
-            this.dgvTimes.Size = new System.Drawing.Size(660, 221);
+            this.dgvTimes.Size = new System.Drawing.Size(539, 255);
             this.dgvTimes.TabIndex = 15;
+            // 
+            // txtTimeFromLoop
+            // 
+            this.txtTimeFromLoop.Location = new System.Drawing.Point(304, 79);
+            this.txtTimeFromLoop.Name = "txtTimeFromLoop";
+            this.txtTimeFromLoop.Size = new System.Drawing.Size(37, 29);
+            this.txtTimeFromLoop.TabIndex = 26;
+            this.txtTimeFromLoop.TextChanged += new System.EventHandler(this.txtTimeFromLoop_TextChanged);
+            this.txtTimeFromLoop.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTimeFromLoop_KeyPress);
+            // 
+            // lblTimeFromLoop
+            // 
+            this.lblTimeFromLoop.AutoSize = true;
+            this.lblTimeFromLoop.Location = new System.Drawing.Point(4, 82);
+            this.lblTimeFromLoop.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTimeFromLoop.Name = "lblTimeFromLoop";
+            this.lblTimeFromLoop.Size = new System.Drawing.Size(237, 21);
+            this.lblTimeFromLoop.TabIndex = 25;
+            this.lblTimeFromLoop.Text = "Time to get back from Loop (hrs)";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 725);
+            this.ClientSize = new System.Drawing.Size(884, 564);
             this.Controls.Add(this.scrMain);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(900, 603);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EDGE Scheduler";
@@ -222,6 +246,8 @@
         private System.Windows.Forms.ComboBox cbxTeam;
         private System.Windows.Forms.Button btnReadData;
         private System.Windows.Forms.Button btnCreateSchedule;
+        private System.Windows.Forms.TextBox txtTimeFromLoop;
+        private System.Windows.Forms.Label lblTimeFromLoop;
     }
 }
 
