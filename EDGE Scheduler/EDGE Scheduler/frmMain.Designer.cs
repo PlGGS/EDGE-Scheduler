@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.scrMain = new System.Windows.Forms.SplitContainer();
-            this.dgvUnavailability = new System.Windows.Forms.DataGridView();
+            this.dgvAvailability = new System.Windows.Forms.DataGridView();
             this.txtTimeFromLoop = new System.Windows.Forms.TextBox();
             this.lblTimeFromLoop = new System.Windows.Forms.Label();
             this.btnCreateSchedule = new System.Windows.Forms.Button();
@@ -53,7 +53,7 @@
             this.scrMain.Panel1.SuspendLayout();
             this.scrMain.Panel2.SuspendLayout();
             this.scrMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUnavailability)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAvailability)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +67,7 @@
             // scrMain.Panel1
             // 
             this.scrMain.Panel1.BackColor = System.Drawing.Color.Silver;
-            this.scrMain.Panel1.Controls.Add(this.dgvUnavailability);
+            this.scrMain.Panel1.Controls.Add(this.dgvAvailability);
             // 
             // scrMain.Panel2
             // 
@@ -89,27 +89,27 @@
             this.scrMain.SplitterDistance = 305;
             this.scrMain.TabIndex = 2;
             // 
-            // dgvUnavailability
+            // dgvAvailability
             // 
-            this.dgvUnavailability.AllowUserToAddRows = false;
-            this.dgvUnavailability.AllowUserToDeleteRows = false;
-            this.dgvUnavailability.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvAvailability.AllowUserToAddRows = false;
+            this.dgvAvailability.AllowUserToDeleteRows = false;
+            this.dgvAvailability.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvUnavailability.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvUnavailability.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUnavailability.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvAvailability.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvAvailability.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAvailability.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column6,
             this.rowMonday,
             this.rowTuesday,
             this.rowWednesday,
             this.rowThursday,
             this.rowFriday});
-            this.dgvUnavailability.Location = new System.Drawing.Point(270, 0);
-            this.dgvUnavailability.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgvUnavailability.Name = "dgvUnavailability";
-            this.dgvUnavailability.ReadOnly = true;
-            this.dgvUnavailability.Size = new System.Drawing.Size(618, 304);
-            this.dgvUnavailability.TabIndex = 16;
+            this.dgvAvailability.Location = new System.Drawing.Point(270, 0);
+            this.dgvAvailability.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvAvailability.Name = "dgvAvailability";
+            this.dgvAvailability.ReadOnly = true;
+            this.dgvAvailability.Size = new System.Drawing.Size(618, 304);
+            this.dgvAvailability.TabIndex = 16;
             // 
             // txtTimeFromLoop
             // 
@@ -305,7 +305,7 @@
             this.scrMain.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scrMain)).EndInit();
             this.scrMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUnavailability)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAvailability)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimes)).EndInit();
             this.ResumeLayout(false);
 
@@ -326,7 +326,7 @@
         private System.Windows.Forms.Button btnCreateSchedule;
         private System.Windows.Forms.TextBox txtTimeFromLoop;
         private System.Windows.Forms.Label lblTimeFromLoop;
-        private System.Windows.Forms.DataGridView dgvUnavailability;
+        private System.Windows.Forms.DataGridView dgvAvailability;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn rowMonday;
         private System.Windows.Forms.DataGridViewTextBoxColumn rowTuesday;

@@ -51,15 +51,47 @@ namespace EDGE_Scheduler
                 tmpTime = tmpTime.AddHours(Properties.Settings.Default.ShiftLength);
             }
 
-            //Fill each spot with a list of the names of all students elidgable to be scheduled for that time slot
-
-            if (Students.Count > 0)
+            if (team >= 0 && team <= 2)
             {
-                RemoveNames((GreenTeamStudent.Teams)team);
+                //Fill each spot with a list of the names of all students elidgable to be scheduled for that time slot
+                AddNames((GreenTeamStudent.Teams)team);
+
+                if (Students.Count > 0)
+                {
+                    RemoveNames((GreenTeamStudent.Teams)team);
+                }
+                else
+                {
+                    MessageBox.Show("No submissions data found. Please make sure you have provided a valid Google Sheet and that you have added the named ranges: 'Columms' and 'Submissions'", Properties.Settings.Default.ApplicationName);
+                }
             }
             else
             {
-                MessageBox.Show("No submissions data found. Please make sure you have provided a valid Google Sheet and that you have added the named ranges: 'Columms' and 'Submissions'", Properties.Settings.Default.ApplicationName);
+                MessageBox.Show($"GreenTeamStudent.Team must be either 0, 1, or 2. Could not fill unavailability for team #{team}");
+            }
+        }
+
+        private void AddNames(GreenTeamStudent.Teams team)
+        {
+            for (int i = 0; i < Students.Count; i++)
+            {
+                if (team == GreenTeamStudent.Teams.Both || Students.Values.ToArray()[i].Team == team)
+                {
+                    for (int o = 0; o < dgvUnavailability.Rows.Count; o++)
+                    {
+                        for (int p = 1 /* set to 1 to make sure we don't place names in the time column */; p < dgvUnavailability.Rows[o].Cells.Count; p++)
+                        {
+                            if (dgvUnavailability.Rows[o].Cells[p].Value == null)
+                            {
+                                dgvUnavailability.Rows[o].Cells[p].Value = Students.Values.ToArray()[i].Name;
+                            }
+                            else
+                            {
+                                dgvUnavailability.Rows[o].Cells[p].Value += $", {Students.Values.ToArray()[i].Name}";
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -86,9 +118,20 @@ namespace EDGE_Scheduler
 
                             if (row.Cells[0].Value != null)
                             {
-                                DateTime timeSlot = DateTime.ParseExact(row.Cells[0].Value.ToString(), "hh:mm:ss tt", CultureInfo.InvariantCulture);
+                                DateTime timeSlot;
 
-                                //do better checks to tell if student is available
+                                //Get current office hours time slot for comparison to class times
+                                try
+                                {
+                                    timeSlot = DateTime.ParseExact(row.Cells[0].Value.ToString(), "hh:mm:ss tt", CultureInfo.InvariantCulture);
+                                }
+                                catch (FormatException)
+                                {
+                                    MessageBox.Show($"Could not parse {row.Cells[0].Value.ToString()} as a valid DateTime");
+                                    break;
+                                }
+
+                                //TODO Do better checks to tell if student is available
                                 if (timeSlot.TimeOfDay > classStart.TimeOfDay && timeSlot.TimeOfDay < classEnd.TimeOfDay)
                                 {
                                     Console.WriteLine($"For {Students.Values.ToArray()[i].Name},{timeSlot.TimeOfDay} is between {classStart.TimeOfDay} and {classEnd.TimeOfDay}");

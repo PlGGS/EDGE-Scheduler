@@ -22,7 +22,7 @@ namespace EDGE_Scheduler
             InitializeComponent();
 
             sheetReader = new SheetReader(dgvTimes);
-            scheduler = new Scheduler(scrMain.Panel1, dgvUnavailability, sheetReader);
+            scheduler = new Scheduler(scrMain.Panel1, dgvAvailability, sheetReader);
 
             Properties.Settings.Default.ExecutableDirectoryPath = AppDomain.CurrentDomain.BaseDirectory;
             Properties.Settings.Default.Save();
