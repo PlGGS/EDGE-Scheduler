@@ -41,17 +41,35 @@ namespace EDGE_Scheduler
                     tmpClass = new Class();
 
                     tmpClass.Name = submissionParams[tmp].ToString();
-                    tmpClass.Days = submissionParams[tmp + 1].ToString().Split(", ".ToCharArray());
+                    tmpClass.Days = submissionParams[tmp + 1].ToString().Split(", ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+
+                    for (int o = 0; o < tmpClass.Days.Length; o++)
+                    {
+                        Console.WriteLine($"Class #{i + 1}: {tmpClass.Days[o]}");
+                    }
+                    Console.WriteLine("");
 
                     if (submissionParams[tmp + 2].ToString() != "")
                     {
                         string[] startTimeSpan = submissionParams[tmp + 2].ToString().Substring(0, submissionParams[tmp + 2].ToString().Length - 3).Split(':');
                         tmpClass.StartTime = tmpClass.StartTime.Date + new TimeSpan(Convert.ToInt32(startTimeSpan[0]), Convert.ToInt32(startTimeSpan[1]), Convert.ToInt32(startTimeSpan[2]));
+
+                        //check if in pm, if so add 12 hours first, if not dont
+                        if (submissionParams[tmp + 2].ToString().Substring(submissionParams[tmp + 2].ToString().Length - 2, 2) == "PM")
+                        {
+                            tmpClass.StartTime = tmpClass.StartTime.AddHours(12);
+                        }
                     }
                     if (submissionParams[tmp + 3].ToString() != "")
                     {
                         string[] endTimeSpan = submissionParams[tmp + 3].ToString().Substring(0, submissionParams[tmp + 3].ToString().Length - 3).Split(':');
                         tmpClass.EndTime = tmpClass.EndTime.Date + new TimeSpan(Convert.ToInt32(endTimeSpan[0]), Convert.ToInt32(endTimeSpan[1]), Convert.ToInt32(endTimeSpan[2]));
+
+                        //check if in pm, if so add 12 hours first, if not dont
+                        if (submissionParams[tmp + 3].ToString().Substring(submissionParams[tmp + 3].ToString().Length - 2, 2) == "PM")
+                        {
+                            tmpClass.EndTime = tmpClass.EndTime.AddHours(12);
+                        }
                     }
 
                     tmpClass.Campus = (submissionParams[tmp + 4].ToString() == "Lincoln Park") ? Class.Campuses.LincolnPark : Class.Campuses.Loop;

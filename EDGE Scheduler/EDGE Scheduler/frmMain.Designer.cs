@@ -247,7 +247,7 @@
             // 
             // Column6
             // 
-            this.Column6.HeaderText = "rowTimes";
+            this.Column6.HeaderText = "Times";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             // 
