@@ -25,7 +25,7 @@ namespace EDGE_Scheduler.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1mLb6wOKlcBmgg_1r1YnIIB6nqiZDOyEObHvoRbridzs")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1t1JjS_uP1upBStXNskGVdYl8naByrNvOeybFVBD1ids")]
         public string SpreadsheetID {
             get {
                 return ((string)(this["SpreadsheetID"]));
@@ -96,6 +96,18 @@ namespace EDGE_Scheduler.Properties {
             }
             set {
                 this["TimeFromLoop"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Team {
+            get {
+                return ((int)(this["Team"]));
+            }
+            set {
+                this["Team"] = value;
             }
         }
     }

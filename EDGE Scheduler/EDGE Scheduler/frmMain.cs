@@ -22,7 +22,7 @@ namespace EDGE_Scheduler
             InitializeComponent();
 
             sheetReader = new SheetReader(dgvTimes);
-            scheduler = new Scheduler(scrMain.Panel1, sheetReader);
+            scheduler = new Scheduler(scrMain.Panel1, dgvUnavailability, sheetReader);
 
             Properties.Settings.Default.ExecutableDirectoryPath = AppDomain.CurrentDomain.BaseDirectory;
             Properties.Settings.Default.Save();
@@ -40,6 +40,9 @@ namespace EDGE_Scheduler
             frmLoading.Show();
 
             cbxTeam.SelectedIndex = 0;
+            Properties.Settings.Default.Team = cbxTeam.SelectedIndex;
+            Properties.Settings.Default.Save();
+
             txtShiftLength.Text = Properties.Settings.Default.ShiftLength.ToString();
             txtTimeFromLoop.Text = Properties.Settings.Default.TimeFromLoop.ToString();
 
@@ -150,6 +153,12 @@ namespace EDGE_Scheduler
                 Properties.Settings.Default.TimeFromLoop = Convert.ToDouble(txtTimeFromLoop.Text);
                 Properties.Settings.Default.Save();
             }
+        }
+
+        private void cbxTeam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Team = cbxTeam.SelectedIndex;
+            Properties.Settings.Default.Save();
         }
     }
 }

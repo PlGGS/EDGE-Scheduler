@@ -8,7 +8,7 @@ namespace EDGE_Scheduler
 {
     class GreenTeamStudent
     {
-        public enum Teams { East, West }
+        public enum Teams { Both, East, West }
 
         public string Timestamp = "Invalid";
         public string Email = "Invalid";

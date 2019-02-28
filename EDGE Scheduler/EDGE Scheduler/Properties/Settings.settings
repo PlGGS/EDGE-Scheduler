@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="SpreadsheetID" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">1mLb6wOKlcBmgg_1r1YnIIB6nqiZDOyEObHvoRbridzs</Value>
+      <Value Profile="(Default)">1t1JjS_uP1upBStXNskGVdYl8naByrNvOeybFVBD1ids</Value>
     </Setting>
     <Setting Name="ExecutableDirectoryPath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -21,6 +21,9 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="TimeFromLoop" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Team" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>
