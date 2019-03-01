@@ -30,12 +30,6 @@
         {
             this.scrMain = new System.Windows.Forms.SplitContainer();
             this.dgvAvailability = new System.Windows.Forms.DataGridView();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowMonday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowTuesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowWednesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowThursday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowFriday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTimeFromLoop = new System.Windows.Forms.TextBox();
             this.lblTimeFromLoop = new System.Windows.Forms.Label();
             this.btnCreateSchedule = new System.Windows.Forms.Button();
@@ -56,6 +50,12 @@
             this.lblInOffice = new System.Windows.Forms.Label();
             this.txtShiftsPerWeek = new System.Windows.Forms.TextBox();
             this.lblShiftsPerWeek = new System.Windows.Forms.Label();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowMonday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowTuesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowWednesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowThursday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowFriday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.scrMain)).BeginInit();
             this.scrMain.Panel1.SuspendLayout();
             this.scrMain.Panel2.SuspendLayout();
@@ -110,6 +110,7 @@
             this.dgvAvailability.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvAvailability.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvAvailability.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvAvailability.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAvailability.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -125,47 +126,6 @@
             this.dgvAvailability.ReadOnly = true;
             this.dgvAvailability.Size = new System.Drawing.Size(888, 304);
             this.dgvAvailability.TabIndex = 16;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Times";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // rowMonday
-            // 
-            this.rowMonday.HeaderText = "Monday";
-            this.rowMonday.Name = "rowMonday";
-            this.rowMonday.ReadOnly = true;
-            this.rowMonday.Width = 95;
-            // 
-            // rowTuesday
-            // 
-            this.rowTuesday.HeaderText = "Tuesday";
-            this.rowTuesday.Name = "rowTuesday";
-            this.rowTuesday.ReadOnly = true;
-            this.rowTuesday.Width = 95;
-            // 
-            // rowWednesday
-            // 
-            this.rowWednesday.HeaderText = "Wednesday";
-            this.rowWednesday.Name = "rowWednesday";
-            this.rowWednesday.ReadOnly = true;
-            this.rowWednesday.Width = 95;
-            // 
-            // rowThursday
-            // 
-            this.rowThursday.HeaderText = "Thursday";
-            this.rowThursday.Name = "rowThursday";
-            this.rowThursday.ReadOnly = true;
-            this.rowThursday.Width = 95;
-            // 
-            // rowFriday
-            // 
-            this.rowFriday.HeaderText = "Friday";
-            this.rowFriday.Name = "rowFriday";
-            this.rowFriday.ReadOnly = true;
-            this.rowFriday.Width = 95;
             // 
             // txtTimeFromLoop
             // 
@@ -370,6 +330,47 @@
             this.lblShiftsPerWeek.TabIndex = 32;
             this.lblShiftsPerWeek.Text = "Per week";
             // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Times";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // rowMonday
+            // 
+            this.rowMonday.HeaderText = "Monday";
+            this.rowMonday.Name = "rowMonday";
+            this.rowMonday.ReadOnly = true;
+            this.rowMonday.Width = 149;
+            // 
+            // rowTuesday
+            // 
+            this.rowTuesday.HeaderText = "Tuesday";
+            this.rowTuesday.Name = "rowTuesday";
+            this.rowTuesday.ReadOnly = true;
+            this.rowTuesday.Width = 149;
+            // 
+            // rowWednesday
+            // 
+            this.rowWednesday.HeaderText = "Wednesday";
+            this.rowWednesday.Name = "rowWednesday";
+            this.rowWednesday.ReadOnly = true;
+            this.rowWednesday.Width = 149;
+            // 
+            // rowThursday
+            // 
+            this.rowThursday.HeaderText = "Thursday";
+            this.rowThursday.Name = "rowThursday";
+            this.rowThursday.ReadOnly = true;
+            this.rowThursday.Width = 149;
+            // 
+            // rowFriday
+            // 
+            this.rowFriday.HeaderText = "Friday";
+            this.rowFriday.Name = "rowFriday";
+            this.rowFriday.ReadOnly = true;
+            this.rowFriday.Width = 149;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -382,7 +383,7 @@
             this.MinimumSize = new System.Drawing.Size(900, 603);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EDGE Scheduler";
+            this.Text = "EDGE Scheduler | Blake Boris";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.scrMain.Panel1.ResumeLayout(false);
             this.scrMain.Panel2.ResumeLayout(false);
@@ -411,12 +412,6 @@
         private System.Windows.Forms.TextBox txtTimeFromLoop;
         private System.Windows.Forms.Label lblTimeFromLoop;
         private System.Windows.Forms.DataGridView dgvAvailability;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rowMonday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rowTuesday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rowWednesday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rowThursday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rowFriday;
         private System.Windows.Forms.TextBox txtMaxStudentsInOffice;
         private System.Windows.Forms.Label lblAmtStudentsInOffice;
         private System.Windows.Forms.TextBox txtMinStudentsInOffice;
@@ -424,6 +419,12 @@
         private System.Windows.Forms.Label lblInOffice;
         private System.Windows.Forms.TextBox txtShiftsPerWeek;
         private System.Windows.Forms.Label lblShiftsPerWeek;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rowMonday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rowTuesday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rowWednesday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rowThursday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rowFriday;
     }
 }
 

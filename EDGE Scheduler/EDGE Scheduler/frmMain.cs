@@ -17,9 +17,16 @@ namespace EDGE_Scheduler
         SheetReader sheetReader;
         Scheduler scheduler;
 
+        frmLoading frmLoading;
+
         public frmMain()
         {
             InitializeComponent();
+
+            this.Icon = Properties.Resources.Icon;
+
+            frmLoading = new frmLoading();
+            frmLoading.Show();
 
             sheetReader = new SheetReader(dgvTimes);
             scheduler = new Scheduler(scrMain.Panel1, dgvAvailability, sheetReader);
@@ -36,8 +43,6 @@ namespace EDGE_Scheduler
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            Form frmLoading = new frmLoading();
-            frmLoading.Show();
 
             cbxTeam.SelectedIndex = 0;
             Properties.Settings.Default.Team = cbxTeam.SelectedIndex;
@@ -75,12 +80,16 @@ namespace EDGE_Scheduler
 
         private void btnReadData_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             sheetReader.LoadGoogleSheet();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btnCreateSchedule_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             scheduler.CreateSchedule(cbxTeam.Text, Properties.Settings.Default.ShiftLength, Properties.Settings.Default.StartTime, Properties.Settings.Default.EndTime);
+            Cursor.Current = Cursors.Default;
         }
 
         private void dtpStart_ValueChanged(object sender, EventArgs e)
