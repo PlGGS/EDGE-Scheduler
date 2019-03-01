@@ -2,7 +2,7 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EDGE_Scheduler.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="SpreadsheetID" Type="System.String" Scope="Application">
+    <Setting Name="SpreadsheetID" Type="System.String" Scope="User">
       <Value Profile="(Default)">1HrxeYVeHqJ5wCb75QnY4N25kOBeMjDhIfx-zpHrRJdk</Value>
     </Setting>
     <Setting Name="ExecutableDirectoryPath" Type="System.String" Scope="User">

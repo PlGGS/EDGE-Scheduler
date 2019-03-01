@@ -23,12 +23,15 @@ namespace EDGE_Scheduler.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1HrxeYVeHqJ5wCb75QnY4N25kOBeMjDhIfx-zpHrRJdk")]
         public string SpreadsheetID {
             get {
                 return ((string)(this["SpreadsheetID"]));
+            }
+            set {
+                this["SpreadsheetID"] = value;
             }
         }
         
