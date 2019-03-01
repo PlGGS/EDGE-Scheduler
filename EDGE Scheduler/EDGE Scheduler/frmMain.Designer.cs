@@ -30,6 +30,12 @@
         {
             this.scrMain = new System.Windows.Forms.SplitContainer();
             this.dgvAvailability = new System.Windows.Forms.DataGridView();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowMonday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowTuesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowWednesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowThursday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowFriday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTimeFromLoop = new System.Windows.Forms.TextBox();
             this.lblTimeFromLoop = new System.Windows.Forms.Label();
             this.btnCreateSchedule = new System.Windows.Forms.Button();
@@ -43,12 +49,13 @@
             this.cbxTeam = new System.Windows.Forms.ComboBox();
             this.btnReadData = new System.Windows.Forms.Button();
             this.dgvTimes = new System.Windows.Forms.DataGridView();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowMonday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowTuesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowWednesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowThursday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowFriday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtMaxStudentsInOffice = new System.Windows.Forms.TextBox();
+            this.lblAmtStudentsInOffice = new System.Windows.Forms.Label();
+            this.txtMinStudentsInOffice = new System.Windows.Forms.TextBox();
+            this.lblMinStudentsInOffice = new System.Windows.Forms.Label();
+            this.lblInOffice = new System.Windows.Forms.Label();
+            this.txtShiftsPerWeek = new System.Windows.Forms.TextBox();
+            this.lblShiftsPerWeek = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.scrMain)).BeginInit();
             this.scrMain.Panel1.SuspendLayout();
             this.scrMain.Panel2.SuspendLayout();
@@ -71,6 +78,12 @@
             // 
             // scrMain.Panel2
             // 
+            this.scrMain.Panel2.Controls.Add(this.txtMaxStudentsInOffice);
+            this.scrMain.Panel2.Controls.Add(this.txtShiftsPerWeek);
+            this.scrMain.Panel2.Controls.Add(this.lblShiftsPerWeek);
+            this.scrMain.Panel2.Controls.Add(this.txtMinStudentsInOffice);
+            this.scrMain.Panel2.Controls.Add(this.lblMinStudentsInOffice);
+            this.scrMain.Panel2.Controls.Add(this.lblAmtStudentsInOffice);
             this.scrMain.Panel2.Controls.Add(this.txtTimeFromLoop);
             this.scrMain.Panel2.Controls.Add(this.lblTimeFromLoop);
             this.scrMain.Panel2.Controls.Add(this.btnCreateSchedule);
@@ -84,6 +97,7 @@
             this.scrMain.Panel2.Controls.Add(this.cbxTeam);
             this.scrMain.Panel2.Controls.Add(this.btnReadData);
             this.scrMain.Panel2.Controls.Add(this.dgvTimes);
+            this.scrMain.Panel2.Controls.Add(this.lblInOffice);
             this.scrMain.Panel2.SizeChanged += new System.EventHandler(this.scrMain_Panel2_SizeChanged);
             this.scrMain.Size = new System.Drawing.Size(888, 564);
             this.scrMain.SplitterDistance = 305;
@@ -93,7 +107,8 @@
             // 
             this.dgvAvailability.AllowUserToAddRows = false;
             this.dgvAvailability.AllowUserToDeleteRows = false;
-            this.dgvAvailability.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvAvailability.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAvailability.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvAvailability.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -104,146 +119,12 @@
             this.rowWednesday,
             this.rowThursday,
             this.rowFriday});
-            this.dgvAvailability.Location = new System.Drawing.Point(270, 0);
+            this.dgvAvailability.Location = new System.Drawing.Point(0, 0);
             this.dgvAvailability.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvAvailability.Name = "dgvAvailability";
             this.dgvAvailability.ReadOnly = true;
-            this.dgvAvailability.Size = new System.Drawing.Size(618, 304);
+            this.dgvAvailability.Size = new System.Drawing.Size(888, 304);
             this.dgvAvailability.TabIndex = 16;
-            // 
-            // txtTimeFromLoop
-            // 
-            this.txtTimeFromLoop.Location = new System.Drawing.Point(227, 79);
-            this.txtTimeFromLoop.Name = "txtTimeFromLoop";
-            this.txtTimeFromLoop.Size = new System.Drawing.Size(37, 29);
-            this.txtTimeFromLoop.TabIndex = 26;
-            this.txtTimeFromLoop.TextChanged += new System.EventHandler(this.txtTimeFromLoop_TextChanged);
-            this.txtTimeFromLoop.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTimeFromLoop_KeyPress);
-            // 
-            // lblTimeFromLoop
-            // 
-            this.lblTimeFromLoop.AutoSize = true;
-            this.lblTimeFromLoop.Location = new System.Drawing.Point(4, 82);
-            this.lblTimeFromLoop.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTimeFromLoop.Name = "lblTimeFromLoop";
-            this.lblTimeFromLoop.Size = new System.Drawing.Size(194, 21);
-            this.lblTimeFromLoop.TabIndex = 25;
-            this.lblTimeFromLoop.Text = "Time to return to LPC (hrs)";
-            // 
-            // btnCreateSchedule
-            // 
-            this.btnCreateSchedule.Location = new System.Drawing.Point(135, 210);
-            this.btnCreateSchedule.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnCreateSchedule.Name = "btnCreateSchedule";
-            this.btnCreateSchedule.Size = new System.Drawing.Size(134, 44);
-            this.btnCreateSchedule.TabIndex = 24;
-            this.btnCreateSchedule.Text = "Create Schedule";
-            this.btnCreateSchedule.UseVisualStyleBackColor = true;
-            this.btnCreateSchedule.Click += new System.EventHandler(this.btnCreateSchedule_Click);
-            // 
-            // lblEnd
-            // 
-            this.lblEnd.AutoSize = true;
-            this.lblEnd.Location = new System.Drawing.Point(2, 162);
-            this.lblEnd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEnd.Name = "lblEnd";
-            this.lblEnd.Size = new System.Drawing.Size(36, 21);
-            this.lblEnd.TabIndex = 23;
-            this.lblEnd.Text = "End";
-            // 
-            // dtpEnd
-            // 
-            this.dtpEnd.Location = new System.Drawing.Point(100, 156);
-            this.dtpEnd.Name = "dtpEnd";
-            this.dtpEnd.Size = new System.Drawing.Size(164, 29);
-            this.dtpEnd.TabIndex = 22;
-            this.dtpEnd.ValueChanged += new System.EventHandler(this.dtpEnd_ValueChanged);
-            // 
-            // lblStart
-            // 
-            this.lblStart.AutoSize = true;
-            this.lblStart.Location = new System.Drawing.Point(2, 123);
-            this.lblStart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblStart.Name = "lblStart";
-            this.lblStart.Size = new System.Drawing.Size(42, 21);
-            this.lblStart.TabIndex = 21;
-            this.lblStart.Text = "Start";
-            // 
-            // dtpStart
-            // 
-            this.dtpStart.Location = new System.Drawing.Point(100, 117);
-            this.dtpStart.Name = "dtpStart";
-            this.dtpStart.Size = new System.Drawing.Size(164, 29);
-            this.dtpStart.TabIndex = 20;
-            this.dtpStart.ValueChanged += new System.EventHandler(this.dtpStart_ValueChanged);
-            // 
-            // txtShiftLength
-            // 
-            this.txtShiftLength.Location = new System.Drawing.Point(227, 41);
-            this.txtShiftLength.Name = "txtShiftLength";
-            this.txtShiftLength.Size = new System.Drawing.Size(37, 29);
-            this.txtShiftLength.TabIndex = 19;
-            // 
-            // lblShiftLength
-            // 
-            this.lblShiftLength.AutoSize = true;
-            this.lblShiftLength.Location = new System.Drawing.Point(4, 44);
-            this.lblShiftLength.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblShiftLength.Name = "lblShiftLength";
-            this.lblShiftLength.Size = new System.Drawing.Size(130, 21);
-            this.lblShiftLength.TabIndex = 18;
-            this.lblShiftLength.Text = "Shift Length (hrs)";
-            // 
-            // lblTeam
-            // 
-            this.lblTeam.AutoSize = true;
-            this.lblTeam.Location = new System.Drawing.Point(2, 6);
-            this.lblTeam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTeam.Name = "lblTeam";
-            this.lblTeam.Size = new System.Drawing.Size(46, 21);
-            this.lblTeam.TabIndex = 16;
-            this.lblTeam.Text = "Team";
-            // 
-            // cbxTeam
-            // 
-            this.cbxTeam.FormattingEnabled = true;
-            this.cbxTeam.Items.AddRange(new object[] {
-            "Both",
-            "East",
-            "West"});
-            this.cbxTeam.Location = new System.Drawing.Point(200, 3);
-            this.cbxTeam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbxTeam.Name = "cbxTeam";
-            this.cbxTeam.Size = new System.Drawing.Size(64, 29);
-            this.cbxTeam.TabIndex = 14;
-            this.cbxTeam.SelectedIndexChanged += new System.EventHandler(this.cbxTeam_SelectedIndexChanged);
-            // 
-            // btnReadData
-            // 
-            this.btnReadData.Location = new System.Drawing.Point(1, 210);
-            this.btnReadData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnReadData.Name = "btnReadData";
-            this.btnReadData.Size = new System.Drawing.Size(134, 44);
-            this.btnReadData.TabIndex = 16;
-            this.btnReadData.Text = "Read Data";
-            this.btnReadData.UseVisualStyleBackColor = true;
-            this.btnReadData.Click += new System.EventHandler(this.btnReadData_Click);
-            // 
-            // dgvTimes
-            // 
-            this.dgvTimes.AllowUserToAddRows = false;
-            this.dgvTimes.AllowUserToDeleteRows = false;
-            this.dgvTimes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvTimes.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvTimes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTimes.Location = new System.Drawing.Point(270, 0);
-            this.dgvTimes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgvTimes.Name = "dgvTimes";
-            this.dgvTimes.ReadOnly = true;
-            this.dgvTimes.Size = new System.Drawing.Size(618, 255);
-            this.dgvTimes.TabIndex = 15;
             // 
             // Column6
             // 
@@ -285,6 +166,209 @@
             this.rowFriday.Name = "rowFriday";
             this.rowFriday.ReadOnly = true;
             this.rowFriday.Width = 95;
+            // 
+            // txtTimeFromLoop
+            // 
+            this.txtTimeFromLoop.Location = new System.Drawing.Point(227, 71);
+            this.txtTimeFromLoop.Name = "txtTimeFromLoop";
+            this.txtTimeFromLoop.Size = new System.Drawing.Size(37, 29);
+            this.txtTimeFromLoop.TabIndex = 26;
+            this.txtTimeFromLoop.TextChanged += new System.EventHandler(this.txtTimeFromLoop_TextChanged);
+            this.txtTimeFromLoop.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTimeFromLoop_KeyPress);
+            // 
+            // lblTimeFromLoop
+            // 
+            this.lblTimeFromLoop.AutoSize = true;
+            this.lblTimeFromLoop.Location = new System.Drawing.Point(4, 74);
+            this.lblTimeFromLoop.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTimeFromLoop.Name = "lblTimeFromLoop";
+            this.lblTimeFromLoop.Size = new System.Drawing.Size(194, 21);
+            this.lblTimeFromLoop.TabIndex = 25;
+            this.lblTimeFromLoop.Text = "Time to return to LPC (hrs)";
+            // 
+            // btnCreateSchedule
+            // 
+            this.btnCreateSchedule.Location = new System.Drawing.Point(135, 210);
+            this.btnCreateSchedule.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCreateSchedule.Name = "btnCreateSchedule";
+            this.btnCreateSchedule.Size = new System.Drawing.Size(134, 44);
+            this.btnCreateSchedule.TabIndex = 24;
+            this.btnCreateSchedule.Text = "Create Schedule";
+            this.btnCreateSchedule.UseVisualStyleBackColor = true;
+            this.btnCreateSchedule.Click += new System.EventHandler(this.btnCreateSchedule_Click);
+            // 
+            // lblEnd
+            // 
+            this.lblEnd.AutoSize = true;
+            this.lblEnd.Location = new System.Drawing.Point(4, 182);
+            this.lblEnd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEnd.Name = "lblEnd";
+            this.lblEnd.Size = new System.Drawing.Size(36, 21);
+            this.lblEnd.TabIndex = 23;
+            this.lblEnd.Text = "End";
+            // 
+            // dtpEnd
+            // 
+            this.dtpEnd.Location = new System.Drawing.Point(100, 176);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(164, 29);
+            this.dtpEnd.TabIndex = 22;
+            this.dtpEnd.ValueChanged += new System.EventHandler(this.dtpEnd_ValueChanged);
+            // 
+            // lblStart
+            // 
+            this.lblStart.AutoSize = true;
+            this.lblStart.Location = new System.Drawing.Point(4, 146);
+            this.lblStart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStart.Name = "lblStart";
+            this.lblStart.Size = new System.Drawing.Size(42, 21);
+            this.lblStart.TabIndex = 21;
+            this.lblStart.Text = "Start";
+            // 
+            // dtpStart
+            // 
+            this.dtpStart.Location = new System.Drawing.Point(100, 140);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(164, 29);
+            this.dtpStart.TabIndex = 20;
+            this.dtpStart.ValueChanged += new System.EventHandler(this.dtpStart_ValueChanged);
+            // 
+            // txtShiftLength
+            // 
+            this.txtShiftLength.Location = new System.Drawing.Point(97, 36);
+            this.txtShiftLength.Name = "txtShiftLength";
+            this.txtShiftLength.Size = new System.Drawing.Size(37, 29);
+            this.txtShiftLength.TabIndex = 19;
+            this.txtShiftLength.TextChanged += new System.EventHandler(this.txtShiftLength_TextChanged);
+            // 
+            // lblShiftLength
+            // 
+            this.lblShiftLength.AutoSize = true;
+            this.lblShiftLength.Location = new System.Drawing.Point(4, 39);
+            this.lblShiftLength.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblShiftLength.Name = "lblShiftLength";
+            this.lblShiftLength.Size = new System.Drawing.Size(86, 21);
+            this.lblShiftLength.TabIndex = 18;
+            this.lblShiftLength.Text = "Shift hours";
+            // 
+            // lblTeam
+            // 
+            this.lblTeam.AutoSize = true;
+            this.lblTeam.Location = new System.Drawing.Point(2, 4);
+            this.lblTeam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTeam.Name = "lblTeam";
+            this.lblTeam.Size = new System.Drawing.Size(46, 21);
+            this.lblTeam.TabIndex = 16;
+            this.lblTeam.Text = "Team";
+            // 
+            // cbxTeam
+            // 
+            this.cbxTeam.FormattingEnabled = true;
+            this.cbxTeam.Items.AddRange(new object[] {
+            "Both",
+            "East",
+            "West"});
+            this.cbxTeam.Location = new System.Drawing.Point(200, 1);
+            this.cbxTeam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxTeam.Name = "cbxTeam";
+            this.cbxTeam.Size = new System.Drawing.Size(64, 29);
+            this.cbxTeam.TabIndex = 14;
+            this.cbxTeam.SelectedIndexChanged += new System.EventHandler(this.cbxTeam_SelectedIndexChanged);
+            // 
+            // btnReadData
+            // 
+            this.btnReadData.Location = new System.Drawing.Point(1, 210);
+            this.btnReadData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnReadData.Name = "btnReadData";
+            this.btnReadData.Size = new System.Drawing.Size(134, 44);
+            this.btnReadData.TabIndex = 16;
+            this.btnReadData.Text = "Read Data";
+            this.btnReadData.UseVisualStyleBackColor = true;
+            this.btnReadData.Click += new System.EventHandler(this.btnReadData_Click);
+            // 
+            // dgvTimes
+            // 
+            this.dgvTimes.AllowUserToAddRows = false;
+            this.dgvTimes.AllowUserToDeleteRows = false;
+            this.dgvTimes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvTimes.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvTimes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTimes.Location = new System.Drawing.Point(270, 0);
+            this.dgvTimes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvTimes.Name = "dgvTimes";
+            this.dgvTimes.ReadOnly = true;
+            this.dgvTimes.Size = new System.Drawing.Size(618, 255);
+            this.dgvTimes.TabIndex = 15;
+            // 
+            // txtMaxStudentsInOffice
+            // 
+            this.txtMaxStudentsInOffice.Enabled = false;
+            this.txtMaxStudentsInOffice.Location = new System.Drawing.Point(63, 105);
+            this.txtMaxStudentsInOffice.Name = "txtMaxStudentsInOffice";
+            this.txtMaxStudentsInOffice.Size = new System.Drawing.Size(37, 29);
+            this.txtMaxStudentsInOffice.TabIndex = 28;
+            // 
+            // lblAmtStudentsInOffice
+            // 
+            this.lblAmtStudentsInOffice.AutoSize = true;
+            this.lblAmtStudentsInOffice.Enabled = false;
+            this.lblAmtStudentsInOffice.Location = new System.Drawing.Point(4, 108);
+            this.lblAmtStudentsInOffice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAmtStudentsInOffice.Name = "lblAmtStudentsInOffice";
+            this.lblAmtStudentsInOffice.Size = new System.Drawing.Size(52, 21);
+            this.lblAmtStudentsInOffice.TabIndex = 27;
+            this.lblAmtStudentsInOffice.Text = "Max #\r\n";
+            // 
+            // txtMinStudentsInOffice
+            // 
+            this.txtMinStudentsInOffice.Enabled = false;
+            this.txtMinStudentsInOffice.Location = new System.Drawing.Point(164, 105);
+            this.txtMinStudentsInOffice.Name = "txtMinStudentsInOffice";
+            this.txtMinStudentsInOffice.Size = new System.Drawing.Size(37, 29);
+            this.txtMinStudentsInOffice.TabIndex = 30;
+            // 
+            // lblMinStudentsInOffice
+            // 
+            this.lblMinStudentsInOffice.AutoSize = true;
+            this.lblMinStudentsInOffice.Enabled = false;
+            this.lblMinStudentsInOffice.Location = new System.Drawing.Point(107, 108);
+            this.lblMinStudentsInOffice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMinStudentsInOffice.Name = "lblMinStudentsInOffice";
+            this.lblMinStudentsInOffice.Size = new System.Drawing.Size(50, 21);
+            this.lblMinStudentsInOffice.TabIndex = 29;
+            this.lblMinStudentsInOffice.Text = "Min #\r\n";
+            // 
+            // lblInOffice
+            // 
+            this.lblInOffice.AutoSize = true;
+            this.lblInOffice.Enabled = false;
+            this.lblInOffice.Location = new System.Drawing.Point(204, 108);
+            this.lblInOffice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInOffice.Name = "lblInOffice";
+            this.lblInOffice.Size = new System.Drawing.Size(65, 21);
+            this.lblInOffice.TabIndex = 31;
+            this.lblInOffice.Text = "in office";
+            // 
+            // txtShiftsPerWeek
+            // 
+            this.txtShiftsPerWeek.Enabled = false;
+            this.txtShiftsPerWeek.Location = new System.Drawing.Point(227, 36);
+            this.txtShiftsPerWeek.Name = "txtShiftsPerWeek";
+            this.txtShiftsPerWeek.Size = new System.Drawing.Size(37, 29);
+            this.txtShiftsPerWeek.TabIndex = 33;
+            // 
+            // lblShiftsPerWeek
+            // 
+            this.lblShiftsPerWeek.AutoSize = true;
+            this.lblShiftsPerWeek.Enabled = false;
+            this.lblShiftsPerWeek.Location = new System.Drawing.Point(141, 39);
+            this.lblShiftsPerWeek.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblShiftsPerWeek.Name = "lblShiftsPerWeek";
+            this.lblShiftsPerWeek.Size = new System.Drawing.Size(72, 21);
+            this.lblShiftsPerWeek.TabIndex = 32;
+            this.lblShiftsPerWeek.Text = "Per week";
             // 
             // frmMain
             // 
@@ -333,6 +417,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn rowWednesday;
         private System.Windows.Forms.DataGridViewTextBoxColumn rowThursday;
         private System.Windows.Forms.DataGridViewTextBoxColumn rowFriday;
+        private System.Windows.Forms.TextBox txtMaxStudentsInOffice;
+        private System.Windows.Forms.Label lblAmtStudentsInOffice;
+        private System.Windows.Forms.TextBox txtMinStudentsInOffice;
+        private System.Windows.Forms.Label lblMinStudentsInOffice;
+        private System.Windows.Forms.Label lblInOffice;
+        private System.Windows.Forms.TextBox txtShiftsPerWeek;
+        private System.Windows.Forms.Label lblShiftsPerWeek;
     }
 }
 

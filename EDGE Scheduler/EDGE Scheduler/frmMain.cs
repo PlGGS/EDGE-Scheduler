@@ -110,7 +110,7 @@ namespace EDGE_Scheduler
 
         private void txtShiftLength_TextChanged(object sender, EventArgs e)
         {
-            if (txtShiftLength.Text == "")
+            if (txtShiftLength.Text == "" || txtShiftLength.Text == ".")
             {
                 Properties.Settings.Default.ShiftLength = 0;
                 Properties.Settings.Default.Save();
@@ -143,7 +143,7 @@ namespace EDGE_Scheduler
 
         private void txtTimeFromLoop_TextChanged(object sender, EventArgs e)
         {
-            if (txtTimeFromLoop.Text == "")
+            if (txtTimeFromLoop.Text == "" || txtTimeFromLoop.Text == ".")
             {
                 Properties.Settings.Default.TimeFromLoop = 0;
                 Properties.Settings.Default.Save();

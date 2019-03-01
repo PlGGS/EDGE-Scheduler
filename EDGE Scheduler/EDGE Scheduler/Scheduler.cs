@@ -200,15 +200,7 @@ namespace EDGE_Scheduler
                 }
             }
         }
-
-        private void RemoveName(string name)
-        {
-            for (int i = 0; i < name.Length; i++)
-            {
-
-            }
-        }
-
+        
         /// <summary>
         /// Create students objects for easy grouping
         /// </summary>
